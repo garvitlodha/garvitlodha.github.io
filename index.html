@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090a13">
+  <meta name="description" content="Garvit Lodha — mathematics, nonlinear dynamics, chaos, mathematical modelling and synchronization.">
+  <title>Garvit Lodha // Mathematical Explorer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="chaosCanvas" aria-hidden="true"></canvas>
+  <div class="noise" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a class="brand" href="#home"><span>G</span>Lodha<span class="dot">.</span></a>
+    <nav>
+      <a href="#arc">Current Arc</a>
+      <a href="#research">Research</a>
+      <a href="#about">About</a>
+      <a href="#gallery">Gallery</a>
+    </nav>
+    <button class="mode" id="modeBtn" aria-label="Toggle visual mode">◐</button>
+  </header>
+
+  <main id="home">
+    <section class="hero section">
+      <div class="hero-copy reveal">
+        <div class="eyebrow"><span class="pulse"></span> ONLINE · EXPLORING CHAOS</div>
+        <p class="mini-code">garvit_lodha.exe / build 2026</p>
+        <h1>Mathematics,<br><em>but make it chaotic.</em></h1>
+        <p class="lede">
+          I'm <strong>Garvit Lodha</strong> — a mathematician fascinated by nonlinear dynamics,
+          mathematical modelling, chaos, and synchronization.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#arc">ENTER THE LAB <span>↗</span></a>
+          <a class="btn ghost" href="#about">WHO AM I?</a>
+        </div>
+        <div class="ticker">
+          <span>MATHEMATICS</span><i>✦</i><span>NONLINEAR DYNAMICS</span><i>✦</i>
+          <span>CHAOS THEORY</span><i>✦</i><span>SYNCHRONIZATION</span>
+        </div>
+      </div>
+
+      <div class="hero-art reveal">
+        <div class="scanline"></div>
+        <div class="corner c1"></div><div class="corner c2"></div>
+        <div class="hero-image-wrap">
+          <img src="assets/garvit-anime.png" alt="Anime-style illustration of Garvit Lodha">
+        </div>
+        <div class="hud hud-top">SUBJECT_01 // GARVIT<br><small>MATHEMATICAL EXPLORER</small></div>
+        <div class="hud hud-bottom">
+          <span>CHAOS</span><strong>∞</strong>
+          <span>CURIOUS</span><strong>ON</strong>
+        </div>
+      </div>
+    </section>
+
+    <section id="arc" class="section arc">
+      <div class="section-head reveal">
+        <p class="label">01 / CURRENT ARC</p>
+        <h2>The system is <em>still evolving.</em></h2>
+        <p>A living snapshot of what is occupying my mathematical brain right now.</p>
+      </div>
+
+      <div class="arc-grid">
+        <article class="terminal-card reveal">
+          <div class="terminal-bar"><span>●</span><span>current_arc.sh</span><span>— □ ×</span></div>
+          <div class="terminal-body">
+            <p class="muted">$ ./status</p>
+            <p><span class="green">STATUS:</span> <b>ACTIVE</b></p>
+            <p><span class="purple">PROJECT:</span> Manuscript on chaotic systems &amp; applications</p>
+            <p><span class="blue">FOCUS:</span> Chaos-based modelling in nonlinear dynamics</p>
+            <p><span class="yellow">NEXT:</span> PhD opportunities in nonlinear dynamics / mathematical modelling</p>
+            <p class="muted">$ ./keep-going</p>
+            <p class="cursor">█</p>
+          </div>
+        </article>
+
+        <article class="arc-note reveal">
+          <div class="note-pin">✦</div>
+          <p class="label">FIELD NOTE</p>
+          <blockquote>
+            “I love to read more and more about chaos and its applications —
+            it keeps fascinating me on a daily basis.”
+          </blockquote>
+          <p class="signature">— Garvit</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="research" class="section research">
+      <div class="section-head reveal">
+        <p class="label">02 / RESEARCH UNIVERSE</p>
+        <h2>Things that make my brain<br><em>go nonlinear.</em></h2>
+      </div>
+      <div class="interest-grid">
+        <article class="interest-card reveal">
+          <span class="number">01</span><div class="glyph">∿</div>
+          <h3>Nonlinear Dynamics</h3>
+          <p>Understanding systems where small changes can create surprisingly rich behaviour.</p>
+          <div class="tag">PRIMARY INTEREST</div>
+        </article>
+        <article class="interest-card featured reveal">
+          <span class="number">02</span><div class="glyph">∞</div>
+          <h3>Chaos Theory</h3>
+          <p>Chaos-based modelling, deterministic unpredictability, attractors and applications.</p>
+          <div class="tag">CURRENT OBSESSION</div>
+        </article>
+        <article class="interest-card reveal">
+          <span class="number">03</span><div class="glyph">↝</div>
+          <h3>Mathematical Modelling</h3>
+          <p>Using mathematical structures to understand, describe and explore complex phenomena.</p>
+          <div class="tag">EXPLORING</div>
+        </article>
+        <article class="interest-card reveal">
+          <span class="number">04</span><div class="glyph">⟷</div>
+          <h3>Synchronization</h3>
+          <p>Collective behaviour and the mathematics behind systems that start moving together.</p>
+          <div class="tag">ON THE RADAR</div>
+        </article>
+      </div>
+
+      <div class="research-image reveal">
+        <img src="assets/lorenz-lecture.png" alt="Garvit presenting a lecture on the Lorenz equations">
+        <div class="image-caption">
+          <span>CHAOS IN THE CLASSROOM</span>
+          <span>LORENZ SYSTEM / λ₁ &gt; 0</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section about">
+      <div class="about-photo reveal">
+        <img src="assets/garvit-real.jpg" alt="Garvit Lodha outdoors">
+        <div class="photo-label">GARVIT / 2026</div>
+      </div>
+      <div class="about-copy reveal">
+        <p class="label">03 / CHARACTER PROFILE</p>
+        <h2>Hi. I'm Garvit.<br><em>Nice to meet you.</em></h2>
+        <p>
+          I recently completed my <strong>Master's in Mathematics from Delhi Technological University</strong>.
+          Right now, I'm looking for PhD opportunities in nonlinear dynamics or mathematical modelling.
+        </p>
+        <p>
+          I’m especially interested in chaos-based modelling and its applications in nonlinear dynamics.
+          At the moment, I’m compiling a manuscript on chaotic systems and their applications.
+        </p>
+        <p>
+          Outside the serious mathematics: I love reading — but only when I’m in the mood.
+          Otherwise, I sleep, scroll my phone, procrastinate the things I don't like,
+          and occasionally pretend I’m avoiding you for a mathematically valid reason.
+        </p>
+
+        <div class="stats">
+          <div><b>∞</b><span>Curiosity</span></div>
+          <div><b>01</b><span>Manuscript</span></div>
+          <div><b>0</b><span>Publications <small>(yet)</small></span></div>
+          <div><b>?</b><span>Next Adventure</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section timeline">
+      <div class="section-head reveal">
+        <p class="label">04 / ACADEMIC TIMELINE</p>
+        <h2>Current trajectory</h2>
+      </div>
+      <div class="timeline-line">
+        <article class="timeline-item reveal">
+          <span class="time">PAST</span><div class="timeline-dot"></div>
+          <div><h3>Master's in Mathematics</h3><p>Delhi Technological University</p></div>
+        </article>
+        <article class="timeline-item active reveal">
+          <span class="time">NOW</span><div class="timeline-dot"></div>
+          <div><h3>Chaos &amp; Applications</h3><p>Compiling a manuscript on chaotic systems and their applications.</p></div>
+        </article>
+        <article class="timeline-item reveal">
+          <span class="time">NEXT</span><div class="timeline-dot"></div>
+          <div><h3>PhD Quest</h3><p>Looking for opportunities in nonlinear dynamics / mathematical modelling.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="gallery" class="section gallery">
+      <div class="section-head reveal">
+        <p class="label">05 / VISUAL LOG</p>
+        <h2>Research, life &amp; <em>side quests.</em></h2>
+      </div>
+      <div class="gallery-grid">
+        <figure class="wide reveal"><img src="assets/research-talk.jpg" alt="Garvit presenting research"><figcaption>RESEARCH MODE / HYPERCHAOS</figcaption></figure>
+        <figure class="tall reveal"><img src="assets/garvit-anime.png" alt="Anime portrait of Garvit"><figcaption>THE ANIME ARC</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="section quote-zone">
+      <div class="quote-orbit">∿ ∞ ∿</div>
+      <p class="label">06 / QUOTE ARCHIVE</p>
+      <h2>“Small changes.<br><em>Big differences.</em>”</h2>
+      <p class="muted">More thoughts and original quotes coming soon.</p>
+      <button class="random-quote" id="quoteBtn">GENERATE A RANDOM THOUGHT ↻</button>
+      <p class="generated" id="generatedQuote">“The interesting part of a system is often what happens when it refuses to behave.”</p>
+    </section>
+
+    <section class="section contact">
+      <div>
+        <p class="label">07 / TRANSMISSION</p>
+        <h2>Want to talk<br><em>mathematics?</em></h2>
+      </div>
+      <div class="contact-card">
+        <p>I'm currently open to conversations about PhD opportunities, nonlinear dynamics, mathematical modelling and interesting mathematical ideas.</p>
+        <a class="mail" href="mailto:sgarvit87@gmail.com">sgarvit87@gmail.com ↗</a>
+        <a class="linkedin" href="https://www.linkedin.com/in/garvit-lodha-456593255/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>GARVIT LODHA // MATHEMATICAL EXPLORER</span>
+    <span>© 2026 · BUILT WITH CURIOSITY &amp; A LITTLE CHAOS</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
