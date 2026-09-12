@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080910">
+  <meta name="description" content="Garvit Lodha — projects, thesis, presentations and research code.">
+  <title>Projects // Garvit Lodha</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .projects-page{position:relative;z-index:3}
+    .projects-hero{min-height:62vh;display:flex;flex-direction:column;justify-content:center;padding-top:90px}
+    .projects-hero h1{max-width:1000px}
+    .projects-hero .lede{max-width:720px}
+    .project-list{border-top:1px solid var(--line)}
+    .project-row{display:grid;grid-template-columns:90px 1fr auto;gap:28px;align-items:start;padding:42px 0;border-bottom:1px solid var(--line);transition:.25s}
+    .project-row:hover{padding-left:12px}
+    .project-num{font:11px var(--mono);color:var(--cyan);padding-top:8px}
+    .project-row h2{font-size:clamp(2rem,4vw,4rem);line-height:.95}
+    .project-row p{color:var(--muted);line-height:1.7;max-width:760px}
+    .project-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+    .project-meta span{font:9px var(--mono);letter-spacing:.08em;border:1px solid var(--line);padding:7px 9px;color:#9b9eaa}
+    .project-status{font:9px var(--mono);color:var(--lime);border:1px solid rgba(183,255,104,.25);padding:8px 10px;white-space:nowrap}
+    .project-card{border:1px solid var(--line);background:rgba(16,18,28,.76);margin-top:30px}
+    .project-card-head{display:flex;justify-content:space-between;gap:20px;align-items:center;padding:25px 30px;border-bottom:1px solid var(--line)}
+    .project-card-head h2{font-size:clamp(2rem,3.5vw,3.5rem)}
+    .project-card-body{padding:30px}
+    .project-intro{display:grid;grid-template-columns:1.2fr .8fr;gap:35px;margin-bottom:45px}
+    .project-intro p{color:var(--muted);line-height:1.8}
+    .facts{border-left:1px solid var(--line);padding-left:25px}
+    .fact{padding:12px 0;border-bottom:1px solid var(--line)}
+    .fact small{display:block;color:#696c78;font:9px var(--mono);margin-bottom:5px}
+    .fact strong{font:14px var(--display)}
+    .project-tabs{display:flex;gap:0;border-bottom:1px solid var(--line);overflow:auto}
+    .project-tab{background:transparent;border:0;border-bottom:2px solid transparent;color:#7e818d;padding:14px 18px;font:10px var(--mono);cursor:pointer;white-space:nowrap}
+    .project-tab.active{color:var(--cyan);border-bottom-color:var(--cyan)}
+    .tab-panel{display:none;padding:35px 5px 10px}
+    .tab-panel.active{display:block}
+    .tab-panel h3{font-size:1.7rem;margin-bottom:12px}
+    .tab-panel p,.tab-panel li{color:var(--muted);line-height:1.75}
+    .tab-panel ul{padding-left:20px}
+    .resource-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:25px}
+    .resource{border:1px solid var(--line);padding:24px;background:rgba(255,255,255,.02)}
+    .resource b{display:block;font:14px var(--display);margin-bottom:8px}.resource span{display:block;color:#70737f;font:9px var(--mono);margin-bottom:18px}
+    .resource a,.resource .coming{font:10px var(--mono);color:var(--cyan)}
+    .resource.disabled{opacity:.55}
+    .future{margin-top:90px}
+    .future-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .future-card{min-height:230px;border:1px dashed #343744;padding:25px;position:relative}
+    .future-card .plus{font-size:2rem;color:var(--hot);position:absolute;right:20px;top:18px}
+    .future-card h3{font-size:1.5rem;margin-top:45px}
+    .future-card p{color:#70737f;line-height:1.6;font-size:.85rem}
+    .back{display:inline-block;margin-top:30px;font:10px var(--mono);color:var(--cyan)}
+    @media(max-width:800px){
+      .project-row{grid-template-columns:45px 1fr}.project-status{grid-column:2;width:max-content}
+      .project-intro{grid-template-columns:1fr}.facts{border-left:0;border-top:1px solid var(--line);padding:20px 0 0}
+      .resource-grid,.future-grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <canvas id="chaosCanvas" aria-hidden="true"></canvas>
+  <div class="noise" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a class="brand" href="index.html"><span>G</span>Lodha<span class="dot">.</span></a>
+    <nav>
+      <a href="index.html#arc">Current Arc</a>
+      <a href="projects.html">Projects</a>
+      <a href="index.html#research">Research</a>
+      <a href="index.html#about">About</a>
+    </nav>
+    <button class="mode" id="modeBtn" aria-label="Toggle visual mode">◐</button>
+  </header>
+
+  <main class="projects-page">
+    <section class="section projects-hero">
+      <p class="label reveal">PROJECT ARCHIVE / 01</p>
+      <h1 class="reveal">Things I've<br><em>worked on.</em></h1>
+      <p class="lede reveal">
+        This is where the mathematics becomes tangible — theses, models, presentations,
+        code, notes and future research projects. Each project gets its own little universe.
+      </p>
+    </section>
+
+    <section class="section project-list">
+      <article class="project-row reveal">
+        <div class="project-num">01 / MSC</div>
+        <div>
+          <h2>MSc Thesis — <em>Chaos &amp; Bifurcations</em></h2>
+          <p>
+            My Master's work exploring chaos theory, logistic maps, bifurcations,
+            period-doubling, Lyapunov exponents and the mathematical ideas behind
+            complex deterministic behaviour.
+          </p>
+          <div class="project-meta">
+            <span>CHAOS THEORY</span><span>LOGISTIC MAP</span><span>BIFURCATION</span>
+            <span>LYAPUNOV EXPONENTS</span><span>MATHEMATICAL MODELLING</span>
+          </div>
+        </div>
+        <span class="project-status">● MAIN PROJECT</span>
+      </article>
+
+      <div class="project-card reveal" id="msc-thesis">
+        <div class="project-card-head">
+          <div>
+            <p class="label">PROJECT 01 / DEEP DIVE</p>
+            <h2>MSc Thesis</h2>
+          </div>
+          <span class="project-status">ARCHIVE / ACTIVE</span>
+        </div>
+        <div class="project-card-body">
+          <div class="project-intro">
+            <div>
+              <p>
+                This page is designed to grow with the thesis. Put the complete thesis PDF,
+                individual chapters, figures, presentations, simulations and source code here.
+                You can keep adding material without changing the overall website design.
+              </p>
+              <p>
+                <strong style="color:var(--text)">Research direction:</strong>
+                chaos theory and its applications, with emphasis on nonlinear dynamical
+                systems and mathematical modelling.
+              </p>
+            </div>
+            <div class="facts">
+              <div class="fact"><small>DEGREE</small><strong>MSc Mathematics</strong></div>
+              <div class="fact"><small>UNIVERSITY</small><strong>Delhi Technological University</strong></div>
+              <div class="fact"><small>DOMAIN</small><strong>Nonlinear Dynamics</strong></div>
+              <div class="fact"><small>STATUS</small><strong>Thesis completed / materials being compiled</strong></div>
+            </div>
+          </div>
+
+          <div class="project-tabs">
+            <button class="project-tab active" data-tab="overview">OVERVIEW</button>
+            <button class="project-tab" data-tab="thesis">THESIS</button>
+            <button class="project-tab" data-tab="presentation">PRESENTATIONS</button>
+            <button class="project-tab" data-tab="code">CODE &amp; SIMULATIONS</button>
+            <button class="project-tab" data-tab="notes">NOTES</button>
+          </div>
+
+          <div class="tab-panel active" id="overview">
+            <h3>What this project is about</h3>
+            <p>
+              A collection of the research journey behind my Master's work — from the
+              mathematical foundations of chaos to numerical experiments and visualisations.
+            </p>
+            <ul>
+              <li>Logistic map and nonlinear iteration</li>
+              <li>Bifurcation and period-doubling phenomena</li>
+              <li>Feigenbaum ideas and routes to chaos</li>
+              <li>Lyapunov exponents and sensitivity to initial conditions</li>
+              <li>Phase portraits and numerical exploration</li>
+            </ul>
+          </div>
+
+          <div class="tab-panel" id="thesis">
+            <h3>The thesis</h3>
+            <p>
+              When your final PDF is ready, upload it to this repository and add its filename
+              to the button below. You can also split the thesis into chapters if you want
+              people to read it online.
+            </p>
+            <div class="resource-grid">
+              <div class="resource disabled"><b>Full Thesis PDF</b><span>ADD PDF TO REPOSITORY</span><div class="coming">COMING SOON ↗</div></div>
+              <div class="resource disabled"><b>Abstract</b><span>ONE-PAGE SUMMARY</span><div class="coming">ADD FILE ↗</div></div>
+              <div class="resource disabled"><b>Figures</b><span>GRAPHS &amp; DIAGRAMS</span><div class="coming">ADD FOLDER ↗</div></div>
+            </div>
+          </div>
+
+          <div class="tab-panel" id="presentation">
+            <h3>Presentations</h3>
+            <p>Keep every presentation connected to this project instead of scattering files across the web.</p>
+            <div class="resource-grid">
+              <div class="resource disabled"><b>Thesis Presentation</b><span>PDF / PPTX</span><div class="coming">ADD FILE ↗</div></div>
+              <div class="resource disabled"><b>Research Talk</b><span>SLIDES / NOTES</span><div class="coming">ADD FILE ↗</div></div>
+              <div class="resource disabled"><b>Conference / Seminar</b><span>FUTURE</span><div class="coming">ADD WHEN AVAILABLE ↗</div></div>
+            </div>
+          </div>
+
+          <div class="tab-panel" id="code">
+            <h3>Code &amp; simulations</h3>
+            <p>
+              Put Python, MATLAB, Mathematica or other simulation files here. Each experiment
+              can later have its own mini-page with an explanation and interactive result.
+            </p>
+            <div class="resource-grid">
+              <div class="resource disabled"><b>Logistic Map</b><span>SIMULATION</span><div class="coming">ADD CODE ↗</div></div>
+              <div class="resource disabled"><b>Bifurcation Diagram</b><span>NUMERICAL EXPERIMENT</span><div class="coming">ADD CODE ↗</div></div>
+              <div class="resource disabled"><b>Lyapunov Analysis</b><span>NUMERICAL EXPERIMENT</span><div class="coming">ADD CODE ↗</div></div>
+            </div>
+          </div>
+
+          <div class="tab-panel" id="notes">
+            <h3>Research notes</h3>
+            <p>
+              A place for derivations, reading notes, useful references, mathematical
+              observations and the small ideas that don't belong in the final thesis.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <section class="future">
+        <div class="section-head reveal">
+          <p class="label">FUTURE PROJECTS</p>
+          <h2>Every new project gets<br><em>its own universe.</em></h2>
+          <p>When you start another research project, we simply add another card and give it its own detail page.</p>
+        </div>
+        <div class="future-grid">
+          <article class="future-card reveal"><span class="plus">+</span><span class="label">02 / NEXT</span><h3>New PhD Project</h3><p>Waiting for the next research arc to unlock.</p></article>
+          <article class="future-card reveal"><span class="plus">+</span><span class="label">03 / NEXT</span><h3>Mathematical Modelling</h3><p>A future project space for models, data and applications.</p></article>
+          <article class="future-card reveal"><span class="plus">+</span><span class="label">04 / NEXT</span><h3>Chaos Applications</h3><p>More experiments, more systems, more beautiful instability.</p></article>
+        </div>
+        <a class="back" href="index.html">← BACK TO MAIN UNIVERSE</a>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <span>GARVIT LODHA // PROJECT ARCHIVE</span>
+    <span>© 2026 · ONE PROJECT AT A TIME</span>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    document.querySelectorAll('.project-tab').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        const target=btn.dataset.tab;
+        document.querySelectorAll('.project-tab').forEach(b=>b.classList.remove('active'));
+        document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById(target).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
